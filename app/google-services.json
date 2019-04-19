@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "599484486111",
+    "firebase_url": "https://testagri-e8f57.firebaseio.com",
+    "project_id": "testagri-e8f57",
+    "storage_bucket": "testagri-e8f57.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599484486111:android:f96a7ad575620d60",
+        "android_client_info": {
+          "package_name": "com.example.agriculturalguide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599484486111-jr6ocpel02fgk5t6691uhqhnab8pqp0g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.agriculturalguide",
+            "certificate_hash": "552acb47ec08d031d10a825a6cc7d144edfdc808"
+          }
+        },
+        {
+          "client_id": "599484486111-rau2fljfuojqp8uujstdlhsnq90uosm6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4l7B6mp9t-azlAacyjPKhPUQnzcr9Xao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "599484486111-rau2fljfuojqp8uujstdlhsnq90uosm6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

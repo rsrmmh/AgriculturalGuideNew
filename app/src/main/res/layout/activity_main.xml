@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:gauge="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        tools:context=".SensorStatusActivity"
+        android:background="@color/md_white_1000">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sensor Value"
+            android:layout_gravity="center"
+            android:textSize="30sp"
+            android:layout_margin="10dp"
+            android:textColor="@color/md_black_1000"
+            android:fontFamily="@font/titillium"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+            android:weightSum="2"
+
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+
+                android:background="@drawable/layout_bg"
+                android:orientation="vertical"
+                android:weightSum="12">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.5"
+                    android:text="Temperature"
+                    android:textSize="25sp"
+                    android:textColor="@color/md_white_1000"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <com.example.agriculturalguide.Thermometer
+                    android:id="@+id/thermometer"
+
+                    android:layout_weight="8"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    app:innerColor="@color/innerColor"
+                    app:middleColor="@color/middleColor"
+                    app:outerColor="@color/md_white_1000"
+                    app:radius="25dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txtTemperature"
+
+                    android:layout_weight="2"
+                    android:layout_width="150dp"
+                    android:layout_height="0dp"
+                    android:textColor="@color/md_white_1000"
+                    android:textSize="35dp"
+                    android:text="32"
+                    android:background="@drawable/layout_bg"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+
+                android:orientation="vertical"
+                android:weightSum="12"
+                android:background="@drawable/layout_bg2">
+
+                <TextView
+                    android:layout_weight="1.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+
+                    android:text="Water"
+                    android:textSize="25sp"
+                    android:textColor="@color/md_white_1000"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="8.5"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="45dp"
+                    >
+
+                    <me.itangqi.waveloadingview.WaveLoadingView
+                        android:id="@+id/waveLoadingView"
+
+                        android:layout_weight="8.5"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+
+                        app:wlv_borderColor="#f47742"
+                        app:wlv_borderWidth="3dp"
+                        app:wlv_shapeType="circle"
+                        app:wlv_round_rectangle="true"
+                        app:wlv_triangle_direction="north"
+
+                        app:wlv_titleCenterStrokeColor="@android:color/holo_blue_dark"
+
+                        app:wlv_titleCenterColor="@color/md_white_1000"
+                        app:wlv_titleCenterSize="30sp"
+
+                        app:wlv_titleTopStrokeColor="@android:color/holo_blue_dark"
+                        app:wlv_titleTopStrokeWidth="3dp"
+                        app:wlv_titleTopColor="#AA0000"
+                        app:wlv_titleTopSize="24sp"
+
+                        app:wlv_titleBottomStrokeColor="@android:color/holo_blue_dark"
+                        app:wlv_titleBottomStrokeWidth="3dp"
+                        app:wlv_titleBottomColor="#00B8FF"
+                        app:wlv_titleBottomSize="24sp"
+
+                        app:wlv_waveAmplitude="70"
+                        app:wlv_waveColor="#185BCF"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="2"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/btnIncrWater"
+                       android:text="Incr"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:background="#2E50FF"
+                        android:visibility="gone"/>
+
+                    <Button
+                        android:id="@+id/btnDecrWater"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:background="#00A878"
+                        />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:background="@drawable/layout_bg3"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal"
+                android:weightSum="7">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Pressure"
+                    android:textSize="25sp"
+                    android:textColor="@color/md_white_1000"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="5"
+                    android:orientation="vertical">
+
+                    <de.nitri.gauge.Gauge
+                        android:id="@+id/gaugePressure"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        gauge:initialValue="50"
+                        gauge:maxValue="100"
+                        gauge:minValue="0"
+                        gauge:totalNicks="130"
+                        gauge:valuePerNick="1"
+                        app:lowerText="Pressure" />
+
+
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/btnIncrPressure"
+
+                        android:visibility="gone"
+                      android:text="Incr"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:background="#2E50FF"
+                        />
+
+                    <Button
+                        android:id="@+id/btnDecrPressure"
+
+                        android:visibility="gone"
+
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:background="#00A878"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--  -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:background="@drawable/layout_bg4"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal"
+                android:weightSum="8">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Humidity"
+                    android:textSize="25sp"
+                    android:textColor="@color/md_white_1000"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="5"
+                    android:orientation="vertical"
+                    >
+
+
+                    <com.example.agriculturalguide.CustomGauge
+                        android:id="@+id/gaugeHumdity"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+
+                        android:layout_centerHorizontal="true"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        app:gaugeEndValue="100"
+                        app:gaugePointEndColor="@color/md_blue_900"
+                        app:gaugePointStartColor="@color/md_blue_300"
+                        app:gaugeStartAngle="135"
+                        app:gaugeStartValue="0"
+                        app:gaugeStrokeCap="BUTT"
+                        app:gaugeStrokeColor="@color/md_grey_400"
+                        app:gaugeStrokeWidth="20dp"
+                        app:gaugeSweepAngle="270"
+                        app:gaugeDividerSize="1"
+                        app:gaugeDividerColor="@color/md_brown_900"
+                        app:gaugeDividerStep="10"
+                        app:gaugeDividerDrawFirst="false"
+                        app:gaugeDividerDrawLast="true"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtHumidity"
+
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:textSize="30sp"
+                    android:textColor="@color/md_white_1000"
+                    android:background="@drawable/layout_bg4"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1.14"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/btnIncrHumidity"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                       android:visibility="gone"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:background="#2E50FF"/>
+
+
+                    <Button
+                        android:id="@+id/btnDecrHumidity"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:background="#00A878"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--  -->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:background="#FF0000"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal"
+                android:weightSum="7">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Rain"
+                    android:textSize="25sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="5"
+                    android:orientation="vertical">
+
+                    <de.nitri.gauge.Gauge
+                        android:id="@+id/gaugeRain"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        gauge:initialValue="50"
+                        gauge:maxValue="100"
+                        gauge:minValue="0"
+                        gauge:totalNicks="130"
+                        gauge:valuePerNick="1"
+                        app:lowerText="Rain" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/btnIncrRain"
+                        android:text="Incr"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:background="#2E50FF"/>
+
+                    <Button
+                        android:id="@+id/btnDecrRain"
+                        android:text="Decr"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:background="#00A878"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--  -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:background="#0aa3d6"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal"
+                android:weightSum="8">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Water Flow"
+                    android:textSize="25sp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="5"
+                    android:orientation="vertical">
+
+
+                    <com.example.agriculturalguide.CustomGauge
+                        android:id="@+id/gaugeWaterFlow"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+
+                        android:layout_centerHorizontal="true"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        app:gaugeEndValue="100"
+                        app:gaugePointEndColor="@color/md_blue_800"
+                        app:gaugePointStartColor="@color/md_blue_300"
+                        app:gaugeStartAngle="135"
+                        app:gaugeStartValue="0"
+                        app:gaugeStrokeCap="ROUND"
+                        app:gaugeStrokeColor="@color/md_grey_400"
+                        app:gaugeStrokeWidth="30dp"
+                        app:gaugeSweepAngle="270" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtWaterFlow"
+
+                    android:layout_weight=".86"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+
+                    android:background="#A600C4"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1.14"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/btnIncrWaterFlow"
+                        android:text="Incr"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:background="#2E50FF"/>
+
+
+                    <Button
+                        android:id="@+id/btnDecrWaterFlow"
+                        android:text="Decr"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:background="#00A878"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--  -->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:background="#a08888"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal"
+                android:weightSum="8">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Soil pH"
+                    android:textSize="25sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="5"
+                    android:orientation="vertical">
+
+                    <com.example.agriculturalguide.CustomGauge
+                        android:id="@+id/gaugeSoil_pH"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="-80dp"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        app:gaugeEndValue="100"
+                        app:gaugePointEndColor="@color/md_green_500"
+                        app:gaugePointStartColor="@color/md_red_500"
+                        app:gaugeStartAngle="180"
+                        app:gaugeStartValue="0"
+                        app:gaugeStrokeCap="BUTT"
+                        app:gaugeStrokeColor="@color/md_grey_400"
+                        app:gaugeStrokeWidth="20dp"
+                        app:gaugeSweepAngle="180"
+                        app:gaugeDividerSize="1"
+                        app:gaugeDividerColor="@color/md_yellow_500"
+                        app:gaugeDividerStep="10"
+                        app:gaugeDividerDrawFirst="false"
+                        app:gaugeDividerDrawLast="true"
+                        />
+
+
+
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtSoilpH"
+
+                    android:layout_weight=".86"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+
+                    android:background="#A600C4"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1.14"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/btnIncrSoil_pH"
+                        android:text="Incr"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:background="#2E50FF"/>
+
+                    <Button
+                        android:id="@+id/btnDecrSoil_pH"
+                        android:text="Decr"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:background="#00A878"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--  -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:background="#E000F8"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal"
+                android:weightSum="8">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Soil Moisture"
+                    android:textSize="25sp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="5"
+                    android:orientation="vertical">
+
+
+                    <com.example.agriculturalguide.CustomGauge
+                        android:id="@+id/gaugeSoilMoisture"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+
+                        android:layout_centerHorizontal="true"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        app:gaugeEndValue="100"
+                        app:gaugePointEndColor="@color/md_blue_900"
+                        app:gaugePointStartColor="@color/md_blue_300"
+                        app:gaugeStartAngle="135"
+                        app:gaugeStartValue="0"
+                        app:gaugeStrokeCap="SQUARE"
+                        app:gaugeStrokeColor="@color/md_grey_400"
+                        app:gaugeStrokeWidth="15dp"
+                        app:gaugeSweepAngle="270"
+                        />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtSoilMoisture"
+
+                    android:layout_weight=".86"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+
+                    android:background="#A600C4"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1.14"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/btnIncrSoilMoisture"
+                        android:text="Incr"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:background="#2E50FF"/>
+
+
+                    <Button
+                        android:id="@+id/btnDecrSoilMoisture"
+                        android:text="Decr"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:background="#00A878"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--  -->
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
