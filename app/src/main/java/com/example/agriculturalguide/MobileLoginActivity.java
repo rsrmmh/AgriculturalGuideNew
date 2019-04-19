@@ -13,7 +13,7 @@ public class MobileLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        FirebaseAuth auth = FirebaseAuth.getInstance();
+/*        FirebaseAuth auth = FirebaseAuth.getInstance();*/
 /*        if(auth.getCurrentUser()!=null){
             if(FirebaseAuth.getInstance().getCurrentUser().getName().isEmpty()){
                 startActivity(new Intent(this, SignInMobile.class)
