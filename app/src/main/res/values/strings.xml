@@ -1,6 +1,12 @@
 <resources>
+
+    <string name="login"><u>I already have an account , login</u></string>
+    <string name="register_text"><u>Register</u></string>
+    <string name="login_text"><u>Login</u></string>
+
     <string name="app_name">Agricultural Guide</string>
     <string name="title_activity_agri__1">Agri_Activity_1</string>
+    <string name="mobile_verification_fails">Mobile Number verification fails.</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 

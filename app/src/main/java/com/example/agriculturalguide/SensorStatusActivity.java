@@ -104,11 +104,11 @@ public class SensorStatusActivity extends AppCompatActivity implements SensorEve
 
 
                                       //Water Level
-        waveLoadingView = findViewById(R.id.waveLoadingView);
+        waveLoadingView =(WaveLoadingView) findViewById(R.id.waveLoadingView);
         waveLoadingView.setProgressValue(0);
 
-        btnIncrWater = findViewById(R.id.btnIncrWater);
-        btnDecrWater = findViewById(R.id.btnDecrWater);
+        btnIncrWater =(Button) findViewById(R.id.btnIncrWater);
+        btnDecrWater =(Button) findViewById(R.id.btnDecrWater);
         cur_water = 50;
         update_Water(cur_water);
 
@@ -134,16 +134,16 @@ public class SensorStatusActivity extends AppCompatActivity implements SensorEve
         });
 
         //Temperature
-        txtTemperature = findViewById(R.id.txtTemperature);
+        txtTemperature =(TextView) findViewById(R.id.txtTemperature);
         thermometer = (Thermometer) findViewById(R.id.thermometer);
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
 
         //Gauge-Pressure
 
-        btnDecrPressure = findViewById(R.id.btnDecrPressure);
-        btnIncrPressure = findViewById(R.id.btnIncrPressure);
-        gauge_Pressure = findViewById(R.id.gaugePressure);
+        btnDecrPressure =(Button) findViewById(R.id.btnDecrPressure);
+        btnIncrPressure =(Button) findViewById(R.id.btnIncrPressure);
+        gauge_Pressure =(Gauge) findViewById(R.id.gaugePressure);
 
 
         //curPressure = 30;
@@ -173,10 +173,10 @@ public class SensorStatusActivity extends AppCompatActivity implements SensorEve
         });
 
         //Gauge_Humidity
-        gauge_Humidity = findViewById(R.id.gaugeHumdity);
-        txtHumidity = findViewById(R.id.txtHumidity);
-        btnIncrHumidity = findViewById(R.id.btnIncrHumidity);
-        btnDecrHumidity = findViewById(R.id.btnDecrHumidity);
+        gauge_Humidity =(CustomGauge) findViewById(R.id.gaugeHumdity);
+        txtHumidity =(TextView) findViewById(R.id.txtHumidity);
+        btnIncrHumidity =(Button) findViewById(R.id.btnIncrHumidity);
+        btnDecrHumidity =(Button) findViewById(R.id.btnDecrHumidity);
         gauge_Humidity.setEndValue(100);
        // cur_Humidity = 50;
         //gauge_Humidity.setValue(cur_Humidity);
@@ -208,9 +208,9 @@ public class SensorStatusActivity extends AppCompatActivity implements SensorEve
 
         //Gauge-Rain
 
-        btnDecrRain = findViewById(R.id.btnDecrRain);
-        btnIncrRain = findViewById(R.id.btnIncrRain);
-        gauge_Rain = findViewById(R.id.gaugeRain);
+        btnDecrRain =(Button) findViewById(R.id.btnDecrRain);
+        btnIncrRain =(Button) findViewById(R.id.btnIncrRain);
+        gauge_Rain =(Gauge) findViewById(R.id.gaugeRain);
 
 
         cur_Rain = 50;
@@ -239,10 +239,10 @@ public class SensorStatusActivity extends AppCompatActivity implements SensorEve
         });
 
         //Gauge_WaterFlow
-        gauge_WaterFlow = findViewById(R.id.gaugeWaterFlow);
-        txtWaterFlow = findViewById(R.id.txtWaterFlow);
-        btnIncrWaterFlow = findViewById(R.id.btnIncrWaterFlow);
-        btnDecrWaterFlow = findViewById(R.id.btnDecrWaterFlow);
+        gauge_WaterFlow =(CustomGauge) findViewById(R.id.gaugeWaterFlow);
+        txtWaterFlow =(TextView) findViewById(R.id.txtWaterFlow);
+        btnIncrWaterFlow = (Button)findViewById(R.id.btnIncrWaterFlow);
+        btnDecrWaterFlow =(Button) findViewById(R.id.btnDecrWaterFlow);
         gauge_Humidity.setEndValue(100);
         cur_WaterFlow = 50;
         gauge_WaterFlow.setValue(cur_WaterFlow);
@@ -273,10 +273,10 @@ public class SensorStatusActivity extends AppCompatActivity implements SensorEve
         });
 
         //Gauge_Soil_pH
-        gauge_Soil_pH = findViewById(R.id.gaugeSoil_pH);
-        txtSoilpH = findViewById(R.id.txtSoilpH);
-        btnIncrSoil_pH = findViewById(R.id.btnIncrSoil_pH);
-        btnDecrSoil_pH = findViewById(R.id.btnDecrSoil_pH);
+        gauge_Soil_pH =(CustomGauge) findViewById(R.id.gaugeSoil_pH);
+        txtSoilpH =(TextView) findViewById(R.id.txtSoilpH);
+        btnIncrSoil_pH =(Button) findViewById(R.id.btnIncrSoil_pH);
+        btnDecrSoil_pH =(Button) findViewById(R.id.btnDecrSoil_pH);
         gauge_Soil_pH.setEndValue(100);
         cur_Soil_pH = 50;
         gauge_Soil_pH.setValue(cur_Soil_pH);
@@ -308,10 +308,10 @@ public class SensorStatusActivity extends AppCompatActivity implements SensorEve
 
 
         //Gauge_SoilMoisture
-        gauge_SoilMoisture = findViewById(R.id.gaugeSoilMoisture);
-        txtSoilMoisture = findViewById(R.id.txtSoilMoisture);
-        btnIncrSoilMoisture = findViewById(R.id.btnIncrSoilMoisture);
-        btnDecrSoilMoisture = findViewById(R.id.btnDecrSoilMoisture);
+        gauge_SoilMoisture =(CustomGauge) findViewById(R.id.gaugeSoilMoisture);
+        txtSoilMoisture =(TextView) findViewById(R.id.txtSoilMoisture);
+        btnIncrSoilMoisture =(Button) findViewById(R.id.btnIncrSoilMoisture);
+        btnDecrSoilMoisture =(Button) findViewById(R.id.btnDecrSoilMoisture);
         gauge_SoilMoisture.setEndValue(100);
         cur_SoilMoisture = 50;
         gauge_SoilMoisture.setValue(cur_SoilMoisture);

@@ -81,7 +81,7 @@
                     android:layout_width="150dp"
                     android:layout_height="0dp"
                     android:textColor="@color/md_white_1000"
-                    android:textSize="35dp"
+                    android:textSize="35sp"
                     android:text="32"
                     android:background="@drawable/layout_bg"
                     android:gravity="center_horizontal"
@@ -272,7 +272,7 @@
                         android:id="@+id/btnIncrPressure"
 
                         android:visibility="gone"
-                      android:text="Incr"
+                        android:text="Incr"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:gravity="center"
@@ -423,7 +423,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
-                android:background="#FF0000"
+                android:background="@drawable/layout_bg5"
                 android:orientation="vertical"
                 android:layout_gravity="center_horizontal"
                 android:weightSum="7">
@@ -473,6 +473,7 @@
                     android:weightSum="2">
 
                     <Button
+                        android:visibility="gone"
                         android:id="@+id/btnIncrRain"
                         android:text="Incr"
                         android:layout_width="0dp"
@@ -483,6 +484,7 @@
                         android:background="#2E50FF"/>
 
                     <Button
+                        android:visibility="gone"
                         android:id="@+id/btnDecrRain"
                         android:text="Decr"
                         android:layout_width="0dp"
@@ -504,7 +506,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
-                android:background="#0aa3d6"
+                android:background="@drawable/layout_bg6"
                 android:orientation="vertical"
                 android:layout_gravity="center_horizontal"
                 android:weightSum="8">
@@ -558,8 +560,9 @@
                     android:layout_weight=".86"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-
-                    android:background="#A600C4"
+                    android:textSize="30sp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/layout_bg6"
                     android:gravity="center_horizontal"
                     android:layout_gravity="center_horizontal"
                     />
@@ -573,6 +576,7 @@
                     android:weightSum="2">
 
                     <Button
+                        android:visibility="gone"
                         android:id="@+id/btnIncrWaterFlow"
                         android:text="Incr"
                         android:layout_width="0dp"
@@ -584,6 +588,7 @@
 
 
                     <Button
+                        android:visibility="gone"
                         android:id="@+id/btnDecrWaterFlow"
                         android:text="Decr"
                         android:layout_width="0dp"
@@ -614,7 +619,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
-                android:background="#a08888"
+                android:background="@drawable/layout_bg"
                 android:orientation="vertical"
                 android:layout_gravity="center_horizontal"
                 android:weightSum="8">
@@ -675,8 +680,9 @@
                     android:layout_weight=".86"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-
-                    android:background="#A600C4"
+                    android:textSize="30sp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/layout_bg"
                     android:gravity="center_horizontal"
                     android:layout_gravity="center_horizontal"
                     />
@@ -690,6 +696,7 @@
                     android:weightSum="2">
 
                     <Button
+                        android:visibility="gone"
                         android:id="@+id/btnIncrSoil_pH"
                         android:text="Incr"
                         android:layout_width="0dp"
@@ -700,6 +707,7 @@
                         android:background="#2E50FF"/>
 
                     <Button
+                        android:visibility="gone"
                         android:id="@+id/btnDecrSoil_pH"
                         android:text="Decr"
                         android:layout_width="0dp"
@@ -721,7 +729,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
-                android:background="#E000F8"
+                android:background="@drawable/layout_bg4"
                 android:orientation="vertical"
                 android:layout_gravity="center_horizontal"
                 android:weightSum="8">
@@ -776,8 +784,9 @@
                     android:layout_weight=".86"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-
-                    android:background="#A600C4"
+                    android:textSize="30sp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/layout_bg4"
                     android:gravity="center_horizontal"
                     android:layout_gravity="center_horizontal"
                     />
@@ -791,6 +800,7 @@
                     android:weightSum="2">
 
                     <Button
+                        android:visibility="gone"
                         android:id="@+id/btnIncrSoilMoisture"
                         android:text="Incr"
                         android:layout_width="0dp"
@@ -802,6 +812,7 @@
 
 
                     <Button
+                        android:visibility="gone"
                         android:id="@+id/btnDecrSoilMoisture"
                         android:text="Decr"
                         android:layout_width="0dp"

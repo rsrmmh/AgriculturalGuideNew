@@ -41,10 +41,10 @@ public class SignIn extends AppCompatActivity {
 
         progressDialog = new ProgressDialog(this);
 
-        txtEmail = findViewById(R.id.txtEmail);
-        txtPassword = findViewById(R.id.txtPassword);
-        btnSignIn = findViewById(R.id.btnSignIn);
-        txtViewRegister = findViewById(R.id.txtViewRegister);
+        txtEmail =(EditText) findViewById(R.id.txtEmail);
+        txtPassword =(EditText) findViewById(R.id.txtPassword);
+        btnSignIn =(Button) findViewById(R.id.btnSignIn);
+        txtViewRegister =(TextView) findViewById(R.id.txtViewRegister);
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +56,7 @@ public class SignIn extends AppCompatActivity {
         txtViewRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Register.class));
+                //startActivity(new Intent(getApplicationContext(), Register.class));
             }
         });
 
