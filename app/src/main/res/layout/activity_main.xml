@@ -254,6 +254,20 @@
                         gauge:valuePerNick="1"
                         app:lowerText="Pressure" />
 
+                    <TextView
+                        android:id="@+id/txtPressure"
+
+                        android:layout_weight="2"
+                        android:layout_width="150dp"
+                        android:layout_height="0dp"
+                        android:textColor="@color/md_white_1000"
+                        android:textSize="35sp"
+                        android:text="KPa"
+                        android:background="@drawable/layout_bg3"
+                        android:gravity="center_horizontal"
+                        android:layout_gravity="center_horizontal"
+                        />
+
 
 
 
@@ -292,7 +306,6 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_weight="1"
                         android:background="#00A878"/>
-
 
                 </LinearLayout>
 

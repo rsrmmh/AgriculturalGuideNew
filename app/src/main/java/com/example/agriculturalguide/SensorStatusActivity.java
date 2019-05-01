@@ -47,6 +47,7 @@ public class SensorStatusActivity extends AppCompatActivity implements SensorEve
     private Button btnIncrPressure, btnDecrPressure;
     private Gauge gauge_Pressure ;
     private int curPressure;
+    private TextView txtPressure;
 
     //Gauge_Humidity
     private CustomGauge gauge_Humidity;
@@ -88,6 +89,8 @@ public class SensorStatusActivity extends AppCompatActivity implements SensorEve
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        txtPressure=(TextView) findViewById(R.id.txtPressure);
+
 
 
         FirebaseApp.initializeApp(this);
@@ -98,6 +101,8 @@ public class SensorStatusActivity extends AppCompatActivity implements SensorEve
 
         getTempFromFirebase();
         getHumFromFirebase();
+        getSoilMoistFromFirebase();
+        getpHFromFirebase();
 
 
 
@@ -345,8 +350,8 @@ public class SensorStatusActivity extends AppCompatActivity implements SensorEve
     }
 
     private void getPressFromFirebase() {
-        reference= FirebaseDatabase.getInstance().getReference().child("Presasure");
 
+        reference= FirebaseDatabase.getInstance().getReference().child("Presasure");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -354,7 +359,8 @@ public class SensorStatusActivity extends AppCompatActivity implements SensorEve
                 curPressure = (int) (Float.parseFloat(press));
                 curPressure=curPressure/100;
                 gauge_Pressure.setValue(curPressure);
-                Toast.makeText(SensorStatusActivity.this,""+curPressure,Toast.LENGTH_SHORT).show();
+                txtPressure.setText(String.valueOf(curPressure)+" kpa");
+                //Toast.makeText(SensorStatusActivity.this,""+curPressure,Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -373,7 +379,7 @@ public class SensorStatusActivity extends AppCompatActivity implements SensorEve
                 String hum = dataSnapshot.getValue().toString();
                 cur_Humidity = Integer.parseInt(hum);
                 gauge_Humidity.setValue(cur_Humidity);
-                txtHumidity.setText(gauge_Humidity.getValue()+"");
+                txtHumidity.setText(gauge_Humidity.getValue()+" %");
             }
 
             @Override
@@ -384,14 +390,53 @@ public class SensorStatusActivity extends AppCompatActivity implements SensorEve
     }
 
     private void getTempFromFirebase() {
-        reference= FirebaseDatabase.getInstance().getReference().child("Temperature");
 
+        reference= FirebaseDatabase.getInstance().getReference().child("Temperature");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String temp = dataSnapshot.getValue().toString();
                 temperature = Float.parseFloat(temp);
 
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void getSoilMoistFromFirebase() {
+        reference= FirebaseDatabase.getInstance().getReference().child("SoilMoist");
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String moist = dataSnapshot.getValue().toString();
+                cur_SoilMoisture =Integer.parseInt(moist);
+                gauge_SoilMoisture.setValue(cur_SoilMoisture);
+                txtSoilMoisture.setText(gauge_SoilMoisture.getValue()+" mg/L");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void getpHFromFirebase() {
+        reference= FirebaseDatabase.getInstance().getReference().child("pH");
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String pH = dataSnapshot.getValue().toString();
+                float parseFloat = Float.parseFloat(pH);
+                cur_Soil_pH = Math.round(parseFloat);
+                gauge_Soil_pH.setValue(cur_Soil_pH);
+                txtSoilpH.setText(gauge_Soil_pH.getValue()+"");
             }
 
             @Override

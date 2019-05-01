@@ -48,11 +48,7 @@
 
         </activity>
         <activity android:name=".MobileVerification.LoginMobileVerification">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity"
             android:configChanges="orientation|screenSize"
@@ -67,7 +63,24 @@
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden|adjustPan"></activity>
+            android:windowSoftInputMode="stateHidden|adjustPan">
+
+        </activity>
+
+        <activity android:name=".Intro.MainActivity">
+
+        </activity>
+        <activity android:name=".Intro.IntroActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MainDashBoard.DashboardMainActivity"/>
+
     </application>
 
 </manifest>

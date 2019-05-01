@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.agriculturalguide.MainDashBoard.DashboardMainActivity;
 import com.example.agriculturalguide.MobileVerification.LoginMobileVerification;
 
 public class LoginActivity extends AppCompatActivity {
@@ -63,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i =new Intent(LoginActivity.this,SensorStatusActivity.class);
+                Intent i =new Intent(LoginActivity.this, DashboardMainActivity.class);
                 startActivity(i);
                 finish();
             }

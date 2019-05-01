@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.agriculturalguide.MainDashBoard.DashboardMainActivity;
 import com.example.agriculturalguide.SensorStatusActivity;
 import com.example.agriculturalguide.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -94,7 +95,7 @@ public class SignIn extends AppCompatActivity {
                         if(task.isSuccessful()){
                             //start the profile activity
                             //finish();
-                            startActivity(new Intent(getApplicationContext(), SensorStatusActivity.class));
+                            startActivity(new Intent(getApplicationContext(), DashboardMainActivity.class));
                         }
                     }
                 });
